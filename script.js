@@ -72,7 +72,7 @@ holdBtnElmt.addEventListener("click", function () {
         if (ifActive0()) {
             score0 += curScore0;
             score0Elmt.textContent = score0;
-            if (score0 >= 30) {
+            if (score0 >= 100) {
                 player0Elmt.classList.add("player--winner");
                 hasWinner = true;
             } else {
@@ -82,7 +82,7 @@ holdBtnElmt.addEventListener("click", function () {
             // player 1 active
             score1 += curScore1;
             score1Elmt.textContent = score1;
-            if (score1 >= 30) {
+            if (score1 >= 100) {
                 player1Elmt.classList.add("player--winner");
                 hasWinner = true;
             } else {
