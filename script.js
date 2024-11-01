@@ -72,7 +72,7 @@ holdBtnElmt.addEventListener("click", function () {
         if (ifActive0()) {
             score0 += curScore0;
             score0Elmt.textContent = score0;
-            if (score0 >= 100) {
+            if (score0 >= 30) {
                 player0Elmt.classList.add("player--winner");
                 hasWinner = true;
             } else {
@@ -82,13 +82,33 @@ holdBtnElmt.addEventListener("click", function () {
             // player 1 active
             score1 += curScore1;
             score1Elmt.textContent = score1;
-            if (score1 >= 100) {
+            if (score1 >= 30) {
                 player1Elmt.classList.add("player--winner");
                 hasWinner = true;
             } else {
                 switch1To0();
             }
         }
+    }
+});
+
+// the new game button
+newBtnElmt.addEventListener("click", function () {
+    hasWinner = false;
+    diceImgElmt.classList.add("hidden");
+    score0 = 0;
+    score1 = 0;
+    curScore0 = 0;
+    curScore1 = 0;
+    score0Elmt.textContent = score0;
+    score1Elmt.textContent = score1;
+    curScore0Elmt.textContent = curScore0;
+    curScore1Elmt.textContent = curScore1;
+    if (player0Elmt.classList.contains("player--winner")) {
+        player0Elmt.classList.remove("player--winner");
+    } else {
+        player1Elmt.classList.remove("player--winner");
+        switch1To0();
     }
 });
 
